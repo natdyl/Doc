@@ -19,7 +19,6 @@
 \begin{document}
 
 \title{Building application using Heroku and Salesforce}
-\author{Praktykanty pracujo}
 \date{\today}
 
 \maketitle
@@ -29,9 +28,9 @@
 
 \section{Introduction}
 \subsection{Salesforce}
-Salesforce is CRM software and enterprise ecosystem. The Salesforce customer portal provides customers the ability to track their own cases, includes a social networking plug-in that enables the user to join the conversation about their company on social networking websites, provides analytical tools and other services including email alert, Google search, and access to customers' entitlement and contracts.[1]
+Salesforce is CRM software and enterprise ecosystem. The Salesforce customer portal provides customers the ability to track their own cases, includes a social networking plug-in that enables the user to join the conversation about their company on social networking websites, provides analytical tools and other services including email alert, Google search, and access to customers' entitlement and contracts.
 \subsection{Heroku}
-Heroku is a cloud Platform-as-a-Service (PaaS) supporting several programming languages that is used as a web application deployment model like Node, Ruby, PHP, Go, Scala, Python, Java, Clojure.[2]
+Heroku is a cloud Platform-as-a-Service (PaaS) supporting several programming languages, that is used as a web application deployment model like Node, Ruby, PHP, Go, Scala, Python, Java, Clojure.[2]
 \subsubsection{Heroku Postgres}
 Heroku Postgres is the Cloud database (DBaaS) service form Heroku based on PostgreSQL. Heroku Postgres provides features like continuous protection, rollback and high availability and also forks, followers and dataclips.[2]
 \subsubsection{Heroku Connect}
@@ -43,8 +42,14 @@ Before you start main configurations, you should install following programs:
 \item Git: \url{https://git-scm.com/downloads} and account on GitHub
 \item Console: ex. \url{http://cmder.net/}
 \item IDE: ex. IntelliJ \url{https://www.jetbrains.com/idea/#chooseYourEdition}
-\item Python 3.6.0: \url{https://www.python.org/downloads/} and pip \url{https://pip.pypa.io/en/stable/installing/} Remeber add Python to path(during installation it will ask you about it).
-\item Download repository with command:\\ git clone https://github.com/HerokuAcc/pizzaman.git \textit{YourRepoName}
+\item Python 3.6.0: \url{https://www.python.org/downloads/} and pip \url{https://pip.pypa.io/en/stable/installing/} Remember to add Python to path(during installation it will ask you about it).
+\item Download repository with command:\\
+\begin{tabular}{|l|}
+	\hline
+ git clone https://github.com/HerokuAcc/pizzaman.git \textit{YourRepoPath}\\
+	\hline
+\end{tabular}\\
+
 
 \end{itemize}
 
@@ -70,7 +75,7 @@ Once you know the IP address click 'setup' section. In the quick find search for
 	\label{fig:setup}
 \end{figure}
 
-Create new. Paste IP of yours in 'Start IP Address' section. In 'End IP address' add the same IP with some extra range.
+Click 'New'. Paste IP of yours in 'Start IP Address' section. In 'End IP address' add the same IP with some extra range.
 
 \begin{figure}[H]
 	\centering
@@ -90,7 +95,7 @@ In order to deploy prepared Salesforce configurations use downloaded repository.
 \end{tabular}\\
 
 Edit 'build.properties\_example' change username and password to one you use for Salesforce and save file as 'build.properties'
-Then write in your consol command for Ant:
+Then write in your console command for Ant:
 
 \begin{tabular}{|l|}
 	\hline
@@ -212,7 +217,7 @@ Now you have Heroku Connect avaliable.
 	\label{fig:conc}
 \end{figure}
 
-\item Click 'Authorize' button with settings like it is shown on Figure \ref{fig:cond}.
+\item Click 'Authorize' button with settings as shown on Figure \ref{fig:cond}.
 
 \begin{figure}[H]
 	\centering
@@ -230,7 +235,7 @@ Now you have Heroku Connect avaliable.
 	\label{fig:cone}
 \end{figure}
 
-\item Click 'Mapping' button. Thank to that you can choose objects and fields in Salesforce you want to have connected with Heroku.
+\item Click 'Mapping' button. Becouse of that, you can choose objects and fields in Salesforce you want to have connected with Heroku.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{images/connect6.PNG}
@@ -275,17 +280,27 @@ Now your mapping is placed on mapping list in Heroku Connection bookmark.
 
 \end{enumerate} 
 
+\section{DATABASES settings}
+To use prepared configurations, open project downloaded from GitHub. Open \textit{gettingstarted} directory. Next, open \textit{static} directory and \textit{settings.py} file. Here is \textit{DATABASES} attribute you insert your data.  
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{images/databases.PNG}
+	\caption{DATABASES method.}
+	\label{fig:data}
+\end{figure}
+
 
 \section{Heroku commands}
-\section{DATABASES settings}
+
 
 \begin{thebibliography}{bib}
-	\bibitem{1} 
+	\bibitem{cos} 
 	 Rao, Leena. 
 	\textit{Everything You Need To Know About Salesforce's Service Cloud 2}. 
 	TechCrunch, Retrieved. September 8, 2009.
 	
-	\bibitem{2}
+	\bibitem{wiki}
 	Wikipedia
 	\\\texttt{https://en.wikipedia.org/wiki/Heroku}
 	
