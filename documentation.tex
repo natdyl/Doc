@@ -6,6 +6,7 @@
 \usepackage{url}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage{ctable}
 
 
 \addtolength{\hoffset}{-1.5cm}
@@ -262,7 +263,7 @@ Now you have Heroku Connect avaliable.
 	\label{fig:cone}
 \end{figure}
 
-\item Click 'Mapping' button. Becouse of that, you can choose objects and fields in Salesforce you want to have connected with Heroku.
+\item Click 'Create mapping' button. Becouse of that, you can choose objects and fields in Salesforce you want to have connected with Heroku.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{images/connect6.PNG}
@@ -304,11 +305,64 @@ Now your mapping is placed on mapping list in Heroku Connection bookmark.
 	\label{fig:conj}
 \end{figure}
 
-
 \end{enumerate} 
 
+List of objects and fields you must map and cofigurations you must check:\\
+\begin{tabular}{|c|c|c|}
+	\hline
+	Object&Field&Configurations\\ 
+	\specialrule{.2em}{.1em}{.1em} 
+	Product2&CreatedDate&none, frequency: 10 min\\
+	\hline
+	Product2&Currency\_\_c &none, frequency: 10 min\\
+	\hline
+	Product2&Descripion\_\_c &none, frequency: 10 min\\
+	\hline
+	Product2&DisplayUrl& none, frequency: 10 min\\
+	\hline
+	Product2&Id&none, frequency: 10 min\\
+	\hline
+	Product2&IsDeleted& none, frequency: 10 min\\
+	\hline		
+	Product2&Name& none, frequency: 10 min\\
+	\hline
+	Product2&Price\_\_c& none, frequency: 10 min\\
+	\hline			
+	Product2&SystemModstamp&none, frequency: 10 min\\
+	\specialrule{.2em}{.1em}{.1em}
+	Order\_\_c& CreatedDate&Write to Salesforce , frequency: 10 min\\ 
+	\hline
+	Order\_\_c&Id&Write to Salesforce , frequency: 10 min\\ 
+	\hline
+	Order\_\_c&IdDeleted&Write to Salesforce , frequency: 10 min\\ 
+	\hline
+	Order\_\_c&Name&Write to Salesforce , frequency: 10 min\\ 
+	\hline
+	Order\_\_c&SystemModstamp&Write to Salesforce , frequency: 10 min\\ 
+	\hline
+Order\_\_ c&cst\_city\_\_c&Write to Salesforce , frequency: 10 min\\ 
+	\hline
+Order\_\_c&cst\_email\_\_c&Write to Salesforce , frequency: 10 min\\ 
+	\hline			
+	Order\_\_c&cst\_name\_\_c&Write to Salesforce , frequency: 10 min\\ 
+	\hline	
+	Order\_\_c&cst\_phone\_\_c&Write to Salesforce , frequency: 10 min\\ 
+	\hline	
+	Order\_\_c&cst\_postal\_code\_\_c&Write to Salesforce , frequency: 10 min\\ 
+	\hline	
+	Order\_\_c&cst\_street\_\_c&Write to Salesforce , frequency: 10 min\\ 
+	\hline		
+	Order\_\_c&cst\_surname\_\_c&Write to Salesforce , frequency: 10 min\\ 
+	\hline	
+	Order\_\_c&cst\_productID\_\_c&Write to Salesforce , frequency: 10 min\\ 
+	\hline	
+	Order\_\_c&cst\_status\_\_c&Write to Salesforce , frequency: 10 min\\ 
+	\hline						
+				
+\end{tabular}
+
 \section{DATABASES settings}
-To use prepared configurations, open project downloaded from GitHub. Open \textit{gettingstarted} directory. Next, open \textit{static} directory and \textit{settings.py} file. Here is \textit{DATABASES} attribute you insert your data.  
+To use prepared configurations, open project downloaded from GitHub. Open \textit{gettingstarted} directory. Next, open \textit{settings.py} file. Here is \textit{DATABASES} attribute you insert your data.  
 
 \begin{figure}[H]
 	\centering
@@ -333,7 +387,8 @@ To get information about data you want insert, log into Heroku. Open your app, t
 	\label{fig:da}
 \end{figure}
 
-
+\section{Deploying code on Heroku}
+To deploy code on Heroku 
 \section{Heroku commands}
 
 
