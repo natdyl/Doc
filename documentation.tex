@@ -45,12 +45,7 @@ Before you start main configurations, you should install following programs:
 \item IDE: ex. IntelliJ \url{https://www.jetbrains.com/idea/#chooseYourEdition}
 \item Python 3.6.0: \url{https://www.python.org/downloads/} and pip \url{https://pip.pypa.io/en/stable/installing/} Remember to add Python to path(during installation it will ask you about it).
 \item Apache Ant: instruction\\ \url{https://www.mkyong.com/ant/how-to-install-apache-ant-on-windows/} 
-\item Download repository with command:\\
-\begin{tabular}{|l|}
-	\hline
- git clone https://github.com/HerokuAcc/pizzaman.git \textit{YourRepoPath}\\
-	\hline
-\end{tabular}\\
+
 
 
 \end{itemize}
@@ -87,6 +82,13 @@ Click 'New'. Paste IP of yours in 'Start IP Address' section. In 'End IP address
 \end{figure}
 
 \subsection{Salesforce deployment using Ant}
+Download repository with command:\\
+\begin{tabular}{|l|}
+	\hline
+	git clone https://github.com/HerokuAcc/pizzaman.git \textit{YourRepoPath}\\
+	\hline
+\end{tabular}\\
+
 In order to deploy prepared Salesforce configurations use downloaded repository. Open console, move to repository and 'salesforce' file using commands:\\
 
 \begin{tabular}{|l|}
@@ -402,9 +404,19 @@ To get information about data you want insert, log into Heroku. Open your app, t
 \end{figure}
 
 
-\section{Heroku commands}
-In order to open app you can do it by Heroku or using commands. \\
-.........tu trzeba dopisać................
+\section{Code deployment}
+In order to open app, you can do it by Heroku or using commands. \\
+\subsection{By Heroku}
+Log into Heroku and open 'Deploy'. Find 'Automatic Deploys' and set configurations as shown on Figure\ref{fig:dep}. Then click on 'Enable Automatic Deploys'.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{images/deploy.PNG}
+	\caption{Deploying code.}
+	\label{fig:dep}
+\end{figure}
+
+\subsection{Using commands}
 To open app in local host type in console following commands:\\
 \begin{tabular}{|l|}
 	\hline
