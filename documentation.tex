@@ -42,7 +42,6 @@ Before you start main configurations, you should install following programs:
 \begin{itemize}
 \item Git: \url{https://git-scm.com/downloads} and account on GitHub
 \item Console: ex. \url{http://cmder.net/}
-\item IDE: ex. IntelliJ \url{https://www.jetbrains.com/idea/#chooseYourEdition}
 \item Python 3.6.0 and pip
 \item Apache Ant: instruction\\ \url{https://www.mkyong.com/ant/how-to-install-apache-ant-on-windows/} 
 
@@ -52,7 +51,7 @@ Remember to add Python to path(during installation it will ask you about it).\\
 
 \begin{figure}[H]
 \centering
-\includegraphics[width = 1 \textwidth]{images/python.PNG}
+\includegraphics{images/python.PNG}
 \caption{Adding Python to path.}
 \label{fig:path}
 \end{figure}
@@ -188,7 +187,7 @@ To activate workflows go to 'Setup', in 'Quick find' type 'process builder' and 
 	\label{fig:processs}
 \end{figure}
 
-Copy everything from pizza.txt file in salesforce folder and paste it into Anonymous Apex through developer console in Salesforce.
+Copy everything from pizzas.txt file in \textit{salesforce} folder and paste it into Anonymous Apex through developer console in Salesforce.
 To do that find Developer Console, use hot key CTRL+E and click 'Execute' button.
 
 \begin{figure}[H]
@@ -376,18 +375,6 @@ Now you have Heroku Connect avaliable.
 	\caption{Setting-selecting needed fields.}
 	\label{fig:coni}
 \end{figure}
-
-Now your mapping is placed on mapping list in Heroku Connection bookmark. 
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=1\textwidth]{images/connect10.PNG}
-	\caption{Mapping effect.}
-	\label{fig:conj}
-\end{figure}
-
-\end{enumerate} 
-
 List of objects and fields you must map and cofigurations you must check:\\
 \begin{tabular}{|c|c|c|}
 	\hline
@@ -421,9 +408,9 @@ List of objects and fields you must map and cofigurations you must check:\\
 	\hline
 	Order\_\_c&SystemModstamp&Write to Salesforce , frequency: 10 min\\ 
 	\hline
-Order\_\_ c&cst\_city\_\_c&Write to Salesforce , frequency: 10 min\\ 
+	Order\_\_ c&cst\_city\_\_c&Write to Salesforce , frequency: 10 min\\ 
 	\hline
-Order\_\_c&cst\_email\_\_c&Write to Salesforce , frequency: 10 min\\ 
+	Order\_\_c&cst\_email\_\_c&Write to Salesforce , frequency: 10 min\\ 
 	\hline			
 	Order\_\_c&cst\_name\_\_c&Write to Salesforce , frequency: 10 min\\ 
 	\hline	
@@ -439,8 +426,22 @@ Order\_\_c&cst\_email\_\_c&Write to Salesforce , frequency: 10 min\\
 	\hline	
 	Order\_\_c&cst\_status\_\_c&Write to Salesforce , frequency: 10 min\\ 
 	\hline						
-				
-\end{tabular}
+	
+\end{tabular}\\
+
+Now your mapping is placed on mapping list in Heroku Connection bookmark. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{images/connect10.PNG}
+	\caption{Mapping effect.}
+	\label{fig:conj}
+\end{figure}
+
+\end{enumerate} 
+
+List of objects and fields you must map and cofigurations you must check:\\
+
 
 \section{DATABASES settings}
 To use prepared configurations, open project downloaded from GitHub. Open \textit{gettingstarted} directory. Next, open \textit{settings.py} file. Here is \textit{DATABASES} attribute you insert your data.  
@@ -472,12 +473,25 @@ To get information about data you want insert, log into Heroku. Open your app, t
 \section{Code deployment}
 In order to open app, you can do it by Heroku or using commands. \\
 \subsection{By Heroku}
-Log into Heroku and open 'Deploy'. Find 'Automatic Deploys' and set configurations as shown on Figure\ref{fig:dep}. Then click on 'Enable Automatic Deploys'.
+Log into Heroku and open 'Deploy'.
+
+\subsubsection{Automatic deploy}
+ Find 'Automatic Deploys' and set configurations as shown on Figure\ref{fig:dep}. Then click on 'Enable Automatic Deploys' button.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{images/deploy.PNG}
-	\caption{Deploying code.}
+	\caption{Automatic deploying code.}
+	\label{fig:dep}
+\end{figure}
+
+\subsubsection{Manual deploy}
+ Find 'Manual Deploy' and set configurations as shown on Figure\ref{fig:dep}. Then click on 'Deploy branch' button.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{images/manual.PNG}
+	\caption{Manual deploying code.}
 	\label{fig:dep}
 \end{figure}
 
