@@ -70,7 +70,7 @@ Then open console and type:
 Create a fork of original repository. \\
 https://github.com/HerokuAcc/pizzaman.git\\
 
-A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project. 
+A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
 
 \begin{figure}[H]
 	\centering
@@ -87,6 +87,38 @@ A fork is a copy of a repository. Forking a repository allows you to freely expe
 \subsection{Sign Up to Salesforce}
 To sign up open following link: \url{https://developer.salesforce.com/signup}.
 Fill the gaps and select 'Developer' in 'Role' field.
+
+\subsection{Open Salesforce}
+
+If you have registered correctly, you should get a confirmation e-mail.
+View after logging in :
+\begin{figure}[H]
+	\centering
+	\includegraphics[width = 1 \textwidth]{images/mains.PNG}
+	\caption{Salesforce Lightning - view after log in.}
+	\label{fig:logq}
+\end{figure}
+Click 'Person' button and select 'Switch to Salesforce Classic'.
+\begin{figure}[H]
+	\centering
+	\includegraphics{images/change1.PNG}
+	\caption{Switch to Salesforce Classic.}
+	\label{fig:logw}
+\end{figure}
+Click 'Site.com' button and select 'Sales'.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width = 1 \textwidth]{images/change2.PNG}
+	\caption{Salesforce Classic.}
+	\label{fig:loge}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{images/change3.PNG}
+	\caption{Switch to Salesforce Classic Sales.}
+	\label{fig:logr}
+\end{figure}
 \subsection{Network access configuration}
 To successfully deployment it is needed to configure network access.
 \begin{figure}[H]
@@ -115,8 +147,7 @@ Click 'New'. Paste IP of yours in 'Start IP Address' section. In 'End IP address
 \end{figure}
 
 \subsection{Salesforce deployment using Ant}
-
-Clone your repository.\\
+Download repository with command:\\
 \begin{tabular}{|l|}
 	\hline
 	git clone \textit{YourRepoPath}\\
