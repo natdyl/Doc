@@ -57,6 +57,37 @@ Before you start main configurations, you should install following programs:
 \subsection{Sign Up to Salesforce}
 To sign up open following link: \url{https://developer.salesforce.com/signup}.
 Fill the gaps and select 'Developer' in 'Role' field.
+
+\subsection{Open Salesforce}
+
+If you have registered correctly, you should get a confirmation e-mail. After logging in to show :
+\begin{figure}[H]
+	\centering
+	\includegraphics[width = 1 \textwidth]{images/mains.PNG}
+	\caption{Salesforce Lightning - view after log in.}
+	\label{fig:logq}
+\end{figure}
+Click 'Person' button and select 'Switch to Salesforce Classic'.
+\begin{figure}[H]
+	\centering
+	\includegraphics{images/change1.PNG}
+	\caption{Switch to Salesforce Classic.}
+	\label{fig:logw}
+\end{figure}
+Click 'Site.com' button and select 'Sales'.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width = 1 \textwidth]{images/change2.PNG}
+	\caption{Salesforce Classic.}
+	\label{fig:loge}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{images/change3.PNG}
+	\caption{Switch to Salesforce Classic Sales.}
+	\label{fig:logr}
+\end{figure}
 \subsection{Network access configuration}
 To successfully deployment it is needed to configure network access.
 \begin{figure}[H]
@@ -85,7 +116,7 @@ Click 'New'. Paste IP of yours in 'Start IP Address' section. In 'End IP address
 \end{figure}
 
 \section{Salesforce deployment using Ant}
-In order to deploy prepared Salesforce configurations use downloaded repository. Open console, move to repository and 'salesforce' file using commands:\\
+In order to deploy prepared Salesforce configurations use downloaded repository. Open console, move to repository and 'Salesforce' file using commands:\\
 
 \begin{tabular}{|l|}
 	\hline
@@ -104,7 +135,7 @@ Then write in your console command for Ant:
 \end{tabular}\\
 
 
-This will deploy custom fields, objects and ProcessBuilder to your  Salesforce.\\
+This will deploy custom fields, objects and ProcessBuilder to your Salesforce.\\
 Copy everything from .txt file in salesforce folder and paste it into Anonymous Apex through developer console in Salesforce.
 To do that find Developer Console, use hot key CTRL+E and click 'Execute' button.
 
