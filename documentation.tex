@@ -6,6 +6,7 @@
 \usepackage{url}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage{ctable}
 
 
 \addtolength{\hoffset}{-1.5cm}
@@ -18,8 +19,8 @@
 
 \begin{document}
 
-\title{Building application using Heroku and Salesforce}
-\date{\today}
+\title{Building application using Heroku and Salesforce\\ \linespread{2} \huge Instruction   }
+
 
 \maketitle
 \newpage
@@ -43,12 +44,19 @@ Before you start main configurations, you should install following programs:
 \item Console: ex. \url{http://cmder.net/}
 \item IDE: ex. IntelliJ \url{https://www.jetbrains.com/idea/#chooseYourEdition}
 \item Python 3.6.0: \url{https://www.python.org/downloads/} and pip \url{https://pip.pypa.io/en/stable/installing/} Remember to add Python to path(during installation it will ask you about it).
-\item Download repository with command:\\
-\begin{tabular}{|l|}
-	\hline
- git clone https://github.com/HerokuAcc/pizzaman.git \textit{YourRepoPath}\\
-	\hline
-\end{tabular}\\
+\item Apache Ant: instruction\\ \url{https://www.mkyong.com/ant/how-to-install-apache-ant-on-windows/}
+
+\subsection{Python installation}
+\subsection{Creating a fork}
+Create a fork of original repository. A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width = 1 \textwidth]{images/fork.PNG}
+	\caption{Creating a fork.}
+	\label{fig:fork}
+\end{figure}
+
 
 
 \end{itemize}
@@ -60,7 +68,7 @@ Fill the gaps and select 'Developer' in 'Role' field.
 
 \subsection{Open Salesforce}
 
-If you have registered correctly, you should get a confirmation e-mail. 
+If you have registered correctly, you should get a confirmation e-mail.
 View after logging in :
 \begin{figure}[H]
 	\centering
@@ -116,8 +124,15 @@ Click 'New'. Paste IP of yours in 'Start IP Address' section. In 'End IP address
 	\label{fig:setupp}
 \end{figure}
 
-\section{Salesforce deployment using Ant}
-In order to deploy prepared Salesforce configurations use downloaded repository. Open console, move to repository and 'Salesforce' file using commands:\\
+\subsection{Salesforce deployment using Ant}
+Download repository with command:\\
+\begin{tabular}{|l|}
+	\hline
+	git clone https://github.com/HerokuAcc/pizzaman.git \textit{YourRepoPath}\\
+	\hline
+\end{tabular}\\
+
+In order to deploy prepared Salesforce configurations use downloaded repository. Open console, move to repository and 'salesforce' file using commands:\\
 
 \begin{tabular}{|l|}
 	\hline
@@ -136,6 +151,22 @@ Then write in your console command for Ant:
 \end{tabular}\\
 
 
+This will deploy custom fields, objects and ProcessBuilder to your  Salesforce.\\
+To activate workflows go to 'Setup', in 'Quick find' type 'process builder' and then click on it. Activate both process build's by clicking on the name of processes and 'Activate' button.
+\begin{figure}[H]
+	\centering
+	\includegraphics{images/process.PNG}
+	\caption{Finding process.}
+	\label{fig:process}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics{images/process2.PNG}
+	\caption{Activate button.}
+	\label{fig:processs}
+\end{figure}
+
+Copy everything from pizza.txt file in salesforce folder and paste it into Anonymous Apex through developer console in Salesforce.
 This will deploy custom fields, objects and ProcessBuilder to your Salesforce.\\
 Copy everything from .txt file in salesforce folder and paste it into Anonymous Apex through developer console in Salesforce.
 To do that find Developer Console, use hot key CTRL+E and click 'Execute' button.
@@ -154,6 +185,32 @@ To do that find Developer Console, use hot key CTRL+E and click 'Execute' button
 	\label{fig:apex}
 \end{figure}
 
+\subsection{Creating tab}
+
+In order to have easier access to custom object you have to create tab. To do that, open 'Setup', an in 'Quick find' type 'tab'. Click on 'Tab'.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{images/tab.PNG}
+	\caption{Finding a tab.}
+	\label{fig:tab}
+\end{figure}
+
+Then click 'New' button and choose an object you want. Then click 'Next' all the time. In the end click 'Save'.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{images/create.PNG}
+	\caption{Creating new tab.}
+	\label{fig:tabb}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{images/tabobj.PNG}
+	\caption{Selecting an object.}
+	\label{fig:tabbb}
+\end{figure}
 
 \section{Heroku}
 \subsection{Sign Up to Heroku}
@@ -267,7 +324,7 @@ Now you have Heroku Connect avaliable.
 	\label{fig:cone}
 \end{figure}
 
-\item Click 'Mapping' button. Becouse of that, you can choose objects and fields in Salesforce you want to have connected with Heroku.
+\item Click 'Create mapping' button. Becouse of that, you can choose objects and fields in Salesforce you want to have connected with Heroku.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{images/connect6.PNG}
@@ -312,8 +369,62 @@ Now your mapping is placed on mapping list in Heroku Connection bookmark.
 
 \end{enumerate} 
 
+List of objects and fields you must map and cofigurations you must check:\\
+\begin{tabular}{|c|c|c|}
+	\hline
+	Object&Field&Configurations\\
+	\specialrule{.2em}{.1em}{.1em}
+	Product2&CreatedDate&none, frequency: 10 min\\
+	\hline
+	Product2&Currency\_\_c &none, frequency: 10 min\\
+	\hline
+	Product2&Descripion\_\_c &none, frequency: 10 min\\
+	\hline
+	Product2&DisplayUrl& none, frequency: 10 min\\
+	\hline
+	Product2&Id&none, frequency: 10 min\\
+	\hline
+	Product2&IsDeleted& none, frequency: 10 min\\
+	\hline
+	Product2&Name& none, frequency: 10 min\\
+	\hline
+	Product2&Price\_\_c& none, frequency: 10 min\\
+	\hline
+	Product2&SystemModstamp&none, frequency: 10 min\\
+	\specialrule{.2em}{.1em}{.1em}
+	Order\_\_c& CreatedDate&Write to Salesforce , frequency: 10 min\\
+	\hline
+	Order\_\_c&Id&Write to Salesforce , frequency: 10 min\\
+	\hline
+	Order\_\_c&IdDeleted&Write to Salesforce , frequency: 10 min\\
+	\hline
+	Order\_\_c&Name&Write to Salesforce , frequency: 10 min\\
+	\hline
+	Order\_\_c&SystemModstamp&Write to Salesforce , frequency: 10 min\\
+	\hline
+Order\_\_ c&cst\_city\_\_c&Write to Salesforce , frequency: 10 min\\
+	\hline
+Order\_\_c&cst\_email\_\_c&Write to Salesforce , frequency: 10 min\\
+	\hline
+	Order\_\_c&cst\_name\_\_c&Write to Salesforce , frequency: 10 min\\
+	\hline
+	Order\_\_c&cst\_phone\_\_c&Write to Salesforce , frequency: 10 min\\
+	\hline
+	Order\_\_c&cst\_postal\_code\_\_c&Write to Salesforce , frequency: 10 min\\
+	\hline
+	Order\_\_c&cst\_street\_\_c&Write to Salesforce , frequency: 10 min\\
+	\hline
+	Order\_\_c&cst\_surname\_\_c&Write to Salesforce , frequency: 10 min\\
+	\hline
+	Order\_\_c&cst\_productID\_\_c&Write to Salesforce , frequency: 10 min\\
+	\hline
+	Order\_\_c&cst\_status\_\_c&Write to Salesforce , frequency: 10 min\\
+	\hline
+
+\end{tabular}
+
 \section{DATABASES settings}
-To use prepared configurations, open project downloaded from GitHub. Open \textit{gettingstarted} directory. Next, open \textit{static} directory and \textit{settings.py} file. Here is \textit{DATABASES} attribute you insert your data.  
+To use prepared configurations, open project downloaded from GitHub. Open \textit{gettingstarted} directory. Next, open \textit{settings.py} file. Here is \textit{DATABASES} attribute you insert your data.
 
 \begin{figure}[H]
 	\centering
@@ -339,8 +450,30 @@ To get information about data you want insert, log into Heroku. Open your app, t
 \end{figure}
 
 
-\section{Heroku commands}
+\section{Code deployment}
+In order to open app, you can do it by Heroku or using commands. \\
+\subsection{By Heroku}
+Log into Heroku and open 'Deploy'. Find 'Automatic Deploys' and set configurations as shown on Figure\ref{fig:dep}. Then click on 'Enable Automatic Deploys'.
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{images/deploy.PNG}
+	\caption{Deploying code.}
+	\label{fig:dep}
+\end{figure}
+
+\subsection{Using commands}
+To open app in local host type in console following commands:\\
+\begin{tabular}{|l|}
+	\hline
+	cd..\\
+	heroku login\\
+	heroku git:remote -a \textit{YourAppName}\\
+	git commit -am "Deploying app for the first time"\\
+	git push heroku origin\\
+	heroku open\\
+	\hline
+\end{tabular}\\
 
 \begin{thebibliography}{bib}
 	\bibitem{cos} 
