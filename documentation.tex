@@ -43,12 +43,34 @@ Before you start main configurations, you should install following programs:
 \item Git: \url{https://git-scm.com/downloads} and account on GitHub
 \item Console: ex. \url{http://cmder.net/}
 \item IDE: ex. IntelliJ \url{https://www.jetbrains.com/idea/#chooseYourEdition}
-\item Python 3.6.0: \url{https://www.python.org/downloads/} and pip \url{https://pip.pypa.io/en/stable/installing/} Remember to add Python to path(during installation it will ask you about it).
+\item Python 3.6.0 and pip
 \item Apache Ant: instruction\\ \url{https://www.mkyong.com/ant/how-to-install-apache-ant-on-windows/} 
 
 \subsection{Python installation}
+Install Python and pip. You can find it in repository in \textit{Installation}.
+Remember to add Python to path(during installation it will ask you about it).\\
+
+\begin{figure}[H]
+\centering
+\includegraphics[width = 1 \textwidth]{images/python.PNG}
+\caption{Adding Python to path.}
+\label{fig:path}
+\end{figure}
+
+Then open console and type:
+
+\begin{tabular}{|l|}
+	\hline
+	python get-pip.py\\
+	pip install requirements.txt\\
+	\hline
+\end{tabular}\\
+
 \subsection{Creating a fork}
-Create a fork of original repository. A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project. 
+Create a fork of original repository. \\
+https://github.com/HerokuAcc/pizzaman.git\\
+
+A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project. 
 
 \begin{figure}[H]
 	\centering
@@ -93,10 +115,11 @@ Click 'New'. Paste IP of yours in 'Start IP Address' section. In 'End IP address
 \end{figure}
 
 \subsection{Salesforce deployment using Ant}
-Download repository with command:\\
+
+Clone your repository.\\
 \begin{tabular}{|l|}
 	\hline
-	git clone https://github.com/HerokuAcc/pizzaman.git \textit{YourRepoPath}\\
+	git clone \textit{YourRepoPath}\\
 	\hline
 \end{tabular}\\
 
