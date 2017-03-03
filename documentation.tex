@@ -41,35 +41,8 @@ Before you start main configurations, you should install following programs:
 
 \begin{itemize}
 \item Git: \url{https://git-scm.com/downloads} and account on GitHub
-\item Console: ex. \url{http://cmder.net/}
-\item Python 3.6.0 and pip
-\item Apache Ant: instruction\\ \url{https://www.mkyong.com/ant/how-to-install-apache-ant-on-windows/} 
-
-\subsection{Python installation}
-Install Python and pip. You can find it in repository in \textit{Installation}.
-Remember to add Python to path(during installation it will ask you about it).\\
-
-\begin{figure}[H]
-\centering
-\includegraphics{images/python.PNG}
-\caption{Adding Python to path.}
-\label{fig:path}
-\end{figure}
-
-Then open console and type:
-
-\begin{tabular}{|l|}
-	\hline
-	python get-pip.py\\
-	pip install requirements.txt\\
-	\hline
-\end{tabular}\\
-
-\subsection{Creating a fork}
-Create a fork of original repository. \\
+\item Create a fork of original repository from \\
 https://github.com/HerokuAcc/pizzaman.git\\
-
-A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
 
 \begin{figure}[H]
 	\centering
@@ -77,8 +50,27 @@ A fork is a copy of a repository. Forking a repository allows you to freely expe
 	\caption{Creating a fork.}
 	\label{fig:fork}
 \end{figure}
+A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
+\item Console: ex. \url{http://cmder.net/}
+\item Python 3.6.0  : \url{https://www.python.org/downloads/}
+Remember to add Python to path(during installation it will ask you about it).\\
+If pip doesn't come preinstalled with Python, download it from: \url{https://pip.pypa.io/en/stable/installing/}\\
 
+\begin{figure}[H]
+	\centering
+	\includegraphics{images/python.PNG}
+	\caption{Adding Python to path.}
+	\label{fig:path}
+\end{figure}
 
+Then open console and type:\\
+\begin{tabular}{|l|}
+	\hline
+	python get-pip.py\\
+	pip install requirements.txt\\
+	\hline
+\end{tabular}\\
+\item Apache Ant: instruction\\ \url{https://www.mkyong.com/ant/how-to-install-apache-ant-on-windows/} 
 
 \end{itemize}
 
@@ -120,12 +112,6 @@ Click 'Site.com' button and select 'Sales'.
 \end{figure}
 \subsection{Network access configuration}
 To successfully deployment it is needed to configure network access.
-\begin{figure}[H]
-	\centering
-	\includegraphics{images/connect5.PNG}
-	\caption{Logging into Salesforce.}
-	\label{fig:log}
-\end{figure}
 To do that it is needed to know the user’s IP address. IP can be checked using site: \url{https://www.whatismyip.com/}.
 Once you know the IP address click 'setup' section. In the quick find search for network access and click on it.  
 
@@ -136,7 +122,7 @@ Once you know the IP address click 'setup' section. In the quick find search for
 	\label{fig:setup}
 \end{figure}
 
-Click 'New'. Paste IP of yours in 'Start IP Address' section. In 'End IP address' add the same IP with some extra range.
+Click 'New'. Paste IP of yours in 'Start IP Address' and in 'End IP address' sections.
 
 \begin{figure}[H]
 	\centering
@@ -149,11 +135,11 @@ Click 'New'. Paste IP of yours in 'Start IP Address' section. In 'End IP address
 Download repository with command:\\
 \begin{tabular}{|l|}
 	\hline
-	git clone \textit{YourRepoPath}\\
+	git clone \textit{YourRepoLink}\\
 	\hline
 \end{tabular}\\
 
-In order to deploy prepared Salesforce configurations use downloaded repository. Open console, move to repository and 'salesforce' file using commands:\\
+In order to deploy prepared Salesforce configurations use downloaded repository. Open console, move to repository and 'salesforce' directory using commands:\\
 
 \begin{tabular}{|l|}
 	\hline
@@ -162,7 +148,7 @@ In order to deploy prepared Salesforce configurations use downloaded repository.
 	\hline
 \end{tabular}\\
 
-Edit 'build.properties\_example' change username and password to one you use for Salesforce and save file as 'build.properties'
+Edit 'build.properties\_example' change Salesforce username and Salesforce password to ones you are using for Salesforce and save file as 'build.properties'
 Then write in your console command for Ant:
 
 \begin{tabular}{|l|}
@@ -204,7 +190,7 @@ To do that find Developer Console, use hot key CTRL+E and click 'Execute' button
 	\label{fig:apex}
 \end{figure}
 
-\subsection{Creating tab}
+\subsection{Creating tab(optional)}
 
 In order to have easier access to custom object you have to create tab. To do that, open 'Setup', an in 'Quick find' type 'tab'. Click on 'Tab'.
 
@@ -214,15 +200,15 @@ In order to have easier access to custom object you have to create tab. To do th
 	\caption{Finding a tab.}
 	\label{fig:tab}
 \end{figure}
-
-Then click 'New' button and choose an object you want. Then click 'Next' all the time. In the end click 'Save'.
-
+If you have tab named 'Heroku Orders' as shown on Figure \ref{fig:tabb} you can go to next section withoutcreating new tab.
 \begin{figure}[H]
 	\centering
 	\includegraphics{images/create.PNG}
 	\caption{Creating new tab.}
 	\label{fig:tabb}
 \end{figure}
+
+If you don't have tab 'Heroku Order', click 'New' button and choose an object you want. Then click 'Next' all the time. In the end click 'Save'.
 
 \begin{figure}[H]
 	\centering
@@ -243,6 +229,15 @@ Now you can create your own app according to steps below:
 \end{enumerate}
 
 \subsection{Connect to Git}
+In order to open your app, click on menu and then select 'Dashboard'.\\
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{images/dashboard.PNG}
+	\caption{Heroku menu}
+	\label{fig:menu}
+\end{figure}
+
 To connect Heroku with Git click on menu and then select 'Deploy'. In 'Deployment method' choose GitHub.
 \begin{figure}[H]
 	\centering
@@ -262,15 +257,8 @@ Next step is selecting repository.
 
 
 \subsection{Postgres}
-In order to open your app, click on menu and then select 'Dashboard'.\\
 
-\begin{figure}[H]
-\centering
-\includegraphics{images/dashboard.PNG}
-\caption{Heroku menu}
-\label{fig:menu}
-\end{figure}
-After that, choose your app and select 'Resources' button.
+In order to find 'Postgres' choose your app and select 'Resources' button.
 \begin{figure}[H]
 	\centering
 	\includegraphics{images/nav.PNG}
@@ -307,6 +295,14 @@ Now you have Heroku Connect avaliable.
 	\caption{Avaliable Heroku Connect.}
 	\label{fig:cona}
 \end{figure}
+Click on Heroku Connect and then 'Allow' button.
+\begin{figure}[H]
+	\centering
+	\includegraphics{images/autconn.PNG}
+	\caption{Heroku Connect autorization.}
+	\label{fig:auto}
+\end{figure}
+
 
 \item Click on 'Setup connection' button.
 \begin{figure}[H]
@@ -444,7 +440,7 @@ List of objects and fields you must map and cofigurations you must check:\\
 
 
 \section{DATABASES settings}
-To use prepared configurations, open project downloaded from GitHub. Open \textit{gettingstarted} directory. Next, open \textit{settings.py} file. Here is \textit{DATABASES} attribute you insert your data.  
+To use prepared configurations, open project downloaded from GitHub. Open \textit{gettingstarted} directory. Next, open \textit{settings.py} file. There is \textit{DATABASES} attribute you insert your data.  
 
 \begin{figure}[H]
 	\centering
@@ -453,7 +449,7 @@ To use prepared configurations, open project downloaded from GitHub. Open \texti
 	\label{fig:data}
 \end{figure}
 
-To get information about data you want insert, log into Heroku. Open your app, then 'Resources' and Postgres. Find 'Administration', 'Database Credintals' and click 'View Credintals' button. Here are needed data.
+To get information about data you want insert, log into Heroku. Open your app, then 'Resources' and Postgres. Find 'Administration', 'Database Credintals' and click 'View Credintals' button. There are needed data.
 
 \begin{figure}[H]
 	\centering
@@ -473,7 +469,7 @@ To get information about data you want insert, log into Heroku. Open your app, t
 \section{Code deployment}
 In order to open app, you can do it by Heroku or using commands. \\
 \subsection{By Heroku}
-Log into Heroku and open 'Deploy'.
+Log into Heroku and open 'Deploy'. You have three ways to deploy the code, but in this situation use only 'Manual deploy'.
 
 \subsubsection{Automatic deploy}
  Find 'Automatic Deploys' and set configurations as shown on Figure\ref{fig:dep}. Then click on 'Enable Automatic Deploys' button.
@@ -486,13 +482,13 @@ Log into Heroku and open 'Deploy'.
 \end{figure}
 
 \subsubsection{Manual deploy}
- Find 'Manual Deploy' and set configurations as shown on Figure\ref{fig:dep}. Then click on 'Deploy branch' button.
+ Find 'Manual Deploy' and set configurations as shown on Figure\ref{fig:depp}. Then click on 'Deploy branch' button.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{images/manual.PNG}
 	\caption{Manual deploying code.}
-	\label{fig:dep}
+	\label{fig:depp}
 \end{figure}
 
 \subsection{Using commands}
@@ -508,6 +504,14 @@ To open app in local host type in console following commands:\\
 	\hline
 \end{tabular}\\
 
+
+After deployment, you can open your app, on the same page, by clicking on 'Open app' button which is on the right top corner of this page. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\textwidth]{images/openapp.PNG}
+	\caption{Opening the app.}
+	\label{fig:opapp}
+\end{figure}
 \begin{thebibliography}{bib}
 	\bibitem{cos} 
 	 Rao, Leena. 
