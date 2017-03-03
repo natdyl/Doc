@@ -44,11 +44,11 @@ Before you start main configurations, you should install following programs:
 \item Console: ex. \url{http://cmder.net/}
 \item IDE: ex. IntelliJ \url{https://www.jetbrains.com/idea/#chooseYourEdition}
 \item Python 3.6.0: \url{https://www.python.org/downloads/} and pip \url{https://pip.pypa.io/en/stable/installing/} Remember to add Python to path(during installation it will ask you about it).
-\item Apache Ant: instruction\\ \url{https://www.mkyong.com/ant/how-to-install-apache-ant-on-windows/} 
+\item Apache Ant: instruction\\ \url{https://www.mkyong.com/ant/how-to-install-apache-ant-on-windows/}
 
 \subsection{Python installation}
 \subsection{Creating a fork}
-Create a fork of original repository. A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project. 
+Create a fork of original repository. A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
 
 \begin{figure}[H]
 	\centering
@@ -65,6 +65,38 @@ Create a fork of original repository. A fork is a copy of a repository. Forking 
 \subsection{Sign Up to Salesforce}
 To sign up open following link: \url{https://developer.salesforce.com/signup}.
 Fill the gaps and select 'Developer' in 'Role' field.
+
+\subsection{Open Salesforce}
+
+If you have registered correctly, you should get a confirmation e-mail.
+View after logging in :
+\begin{figure}[H]
+	\centering
+	\includegraphics[width = 1 \textwidth]{images/mains.PNG}
+	\caption{Salesforce Lightning - view after log in.}
+	\label{fig:logq}
+\end{figure}
+Click 'Person' button and select 'Switch to Salesforce Classic'.
+\begin{figure}[H]
+	\centering
+	\includegraphics{images/change1.PNG}
+	\caption{Switch to Salesforce Classic.}
+	\label{fig:logw}
+\end{figure}
+Click 'Site.com' button and select 'Sales'.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width = 1 \textwidth]{images/change2.PNG}
+	\caption{Salesforce Classic.}
+	\label{fig:loge}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{images/change3.PNG}
+	\caption{Switch to Salesforce Classic Sales.}
+	\label{fig:logr}
+\end{figure}
 \subsection{Network access configuration}
 To successfully deployment it is needed to configure network access.
 \begin{figure}[H]
@@ -135,6 +167,8 @@ To activate workflows go to 'Setup', in 'Quick find' type 'process builder' and 
 \end{figure}
 
 Copy everything from pizza.txt file in salesforce folder and paste it into Anonymous Apex through developer console in Salesforce.
+This will deploy custom fields, objects and ProcessBuilder to your Salesforce.\\
+Copy everything from .txt file in salesforce folder and paste it into Anonymous Apex through developer console in Salesforce.
 To do that find Developer Console, use hot key CTRL+E and click 'Execute' button.
 
 \begin{figure}[H]
@@ -177,7 +211,7 @@ Then click 'New' button and choose an object you want. Then click 'Next' all the
 	\caption{Selecting an object.}
 	\label{fig:tabbb}
 \end{figure}
- 
+
 \section{Heroku}
 \subsection{Sign Up to Heroku}
 Create account in Heroku: \url{https://signup.heroku.com/login}. Select development language to Python. 
@@ -332,13 +366,14 @@ Now your mapping is placed on mapping list in Heroku Connection bookmark.
 	\label{fig:conj}
 \end{figure}
 
+
 \end{enumerate} 
 
 List of objects and fields you must map and cofigurations you must check:\\
 \begin{tabular}{|c|c|c|}
 	\hline
-	Object&Field&Configurations\\ 
-	\specialrule{.2em}{.1em}{.1em} 
+	Object&Field&Configurations\\
+	\specialrule{.2em}{.1em}{.1em}
 	Product2&CreatedDate&none, frequency: 10 min\\
 	\hline
 	Product2&Currency\_\_c &none, frequency: 10 min\\
@@ -350,46 +385,46 @@ List of objects and fields you must map and cofigurations you must check:\\
 	Product2&Id&none, frequency: 10 min\\
 	\hline
 	Product2&IsDeleted& none, frequency: 10 min\\
-	\hline		
+	\hline
 	Product2&Name& none, frequency: 10 min\\
 	\hline
 	Product2&Price\_\_c& none, frequency: 10 min\\
-	\hline			
+	\hline
 	Product2&SystemModstamp&none, frequency: 10 min\\
 	\specialrule{.2em}{.1em}{.1em}
-	Order\_\_c& CreatedDate&Write to Salesforce , frequency: 10 min\\ 
+	Order\_\_c& CreatedDate&Write to Salesforce , frequency: 10 min\\
 	\hline
-	Order\_\_c&Id&Write to Salesforce , frequency: 10 min\\ 
+	Order\_\_c&Id&Write to Salesforce , frequency: 10 min\\
 	\hline
-	Order\_\_c&IdDeleted&Write to Salesforce , frequency: 10 min\\ 
+	Order\_\_c&IdDeleted&Write to Salesforce , frequency: 10 min\\
 	\hline
-	Order\_\_c&Name&Write to Salesforce , frequency: 10 min\\ 
+	Order\_\_c&Name&Write to Salesforce , frequency: 10 min\\
 	\hline
-	Order\_\_c&SystemModstamp&Write to Salesforce , frequency: 10 min\\ 
+	Order\_\_c&SystemModstamp&Write to Salesforce , frequency: 10 min\\
 	\hline
-Order\_\_ c&cst\_city\_\_c&Write to Salesforce , frequency: 10 min\\ 
+Order\_\_ c&cst\_city\_\_c&Write to Salesforce , frequency: 10 min\\
 	\hline
-Order\_\_c&cst\_email\_\_c&Write to Salesforce , frequency: 10 min\\ 
-	\hline			
-	Order\_\_c&cst\_name\_\_c&Write to Salesforce , frequency: 10 min\\ 
-	\hline	
-	Order\_\_c&cst\_phone\_\_c&Write to Salesforce , frequency: 10 min\\ 
-	\hline	
-	Order\_\_c&cst\_postal\_code\_\_c&Write to Salesforce , frequency: 10 min\\ 
-	\hline	
-	Order\_\_c&cst\_street\_\_c&Write to Salesforce , frequency: 10 min\\ 
-	\hline		
-	Order\_\_c&cst\_surname\_\_c&Write to Salesforce , frequency: 10 min\\ 
-	\hline	
-	Order\_\_c&cst\_productID\_\_c&Write to Salesforce , frequency: 10 min\\ 
-	\hline	
-	Order\_\_c&cst\_status\_\_c&Write to Salesforce , frequency: 10 min\\ 
-	\hline						
-				
+Order\_\_c&cst\_email\_\_c&Write to Salesforce , frequency: 10 min\\
+	\hline
+	Order\_\_c&cst\_name\_\_c&Write to Salesforce , frequency: 10 min\\
+	\hline
+	Order\_\_c&cst\_phone\_\_c&Write to Salesforce , frequency: 10 min\\
+	\hline
+	Order\_\_c&cst\_postal\_code\_\_c&Write to Salesforce , frequency: 10 min\\
+	\hline
+	Order\_\_c&cst\_street\_\_c&Write to Salesforce , frequency: 10 min\\
+	\hline
+	Order\_\_c&cst\_surname\_\_c&Write to Salesforce , frequency: 10 min\\
+	\hline
+	Order\_\_c&cst\_productID\_\_c&Write to Salesforce , frequency: 10 min\\
+	\hline
+	Order\_\_c&cst\_status\_\_c&Write to Salesforce , frequency: 10 min\\
+	\hline
+
 \end{tabular}
 
 \section{DATABASES settings}
-To use prepared configurations, open project downloaded from GitHub. Open \textit{gettingstarted} directory. Next, open \textit{settings.py} file. Here is \textit{DATABASES} attribute you insert your data.  
+To use prepared configurations, open project downloaded from GitHub. Open \textit{gettingstarted} directory. Next, open \textit{settings.py} file. Here is \textit{DATABASES} attribute you insert your data.
 
 \begin{figure}[H]
 	\centering
